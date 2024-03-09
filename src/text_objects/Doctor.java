@@ -48,7 +48,6 @@ public class Doctor extends Person{
         public static void setMedicalRecordsOfCenter(List<String> medicalRecordsOfCenter) {
             MedicalRegister.medicalRecordsOfCenter = medicalRecordsOfCenter;
         }
-
         public static String stringAllMedicalRecordsOfCenter(){
             StringBuilder s = new StringBuilder();
             for(String current: medicalRecordsOfCenter){

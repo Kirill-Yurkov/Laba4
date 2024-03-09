@@ -1,6 +1,5 @@
 import emotions.EmotionType;
 import exceptions.CarFailException;
-import exceptions.PeopleAddedToLocationException;
 import exceptions.WrongSeatException;
 import interfaces.Musicable;
 import locations.AbstractLocation;
@@ -11,7 +10,8 @@ import text_objects.*;
 import weather.WeatherType;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Arrays;
+import java.lang.reflect.Method;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -33,13 +33,9 @@ public class Main {
         Home.CinemaRoom cinema = home.new CinemaRoom();
 
 
-        home.addPeople(louis, rachel, gage);
-        try {
-            cinema.startCinema();
-        } catch (PeopleAddedToLocationException e){
-            System.out.println(e.getMessage());
-        }
 
+
+        cinema.startCinema();
         louis.setCurrentEmotion(EmotionType.SURPRISE);
         kesha.memorizePhrase("Ариэль Шэрон свихнулся");
         kesha.say();
@@ -101,7 +97,6 @@ public class Main {
         }
         louis.setLocation(medicineCenter);
         steve.setLocation(medicineCenter);
-
         Musicable medicineGramophone = new Musicable() {
             public final AbstractLocation location = medicineCenter;
             private boolean isPlaying = false;
@@ -135,6 +130,7 @@ public class Main {
                 };
             }
         };
+
         medicineGramophone.playMusic();
         louis.examinePatient(patient1, Disease.ALCOHOL_INTOXICATION);
         steve.examinePatient(patient2, Disease.HEADACHE);
@@ -144,5 +140,6 @@ public class Main {
         medicineGramophone.stopMusic();
         System.out.println("All doctors records: \n" + Doctor.MedicalRegister.stringAllMedicalRecordsOfCenter());
 
+        
     }
 }

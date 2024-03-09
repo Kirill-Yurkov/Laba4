@@ -3,11 +3,13 @@ package locations;
 import emotions.EmotionType;
 import text_objects.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Store extends AbstractLocation {
     public Store(String name) {
         super(name);
     }
-
     private Person person;
 
     @Override
@@ -48,7 +50,7 @@ public class Store extends AbstractLocation {
     }
 
     private boolean discountOnFood() {
-        return getPeople().size() >= 3;
+        return people.size() >= 3;
     }
 
     public Toy buyToy(Toy toy){
@@ -61,4 +63,5 @@ public class Store extends AbstractLocation {
         }
         return toy;
     }
+
 }

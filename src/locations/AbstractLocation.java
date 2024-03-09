@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public abstract class AbstractLocation {
     private final String name;
-    private final List<Person> people = new ArrayList<>();
+    protected final List<Person> people = new ArrayList<>();
 
     public AbstractLocation(String name) {
         this.name = name;

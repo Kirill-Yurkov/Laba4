@@ -36,7 +36,6 @@ public class Home extends AbstractLocation {
     }
 
     public class CinemaRoom{
-
         public void startCinema(Person... people) throws PeopleAddedToLocationException{
             if(!getPeople().isEmpty()){
                 for(Person person: people){
@@ -48,6 +47,7 @@ public class Home extends AbstractLocation {
             }
 
         }
+
         public void startCinema() throws PeopleAddedToLocationException{
             if(!getPeople().isEmpty()){
                 for(Person person: getPeople()){

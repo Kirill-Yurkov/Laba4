@@ -17,7 +17,7 @@ public class Car{
         this.isRunning = false;
         this.isMusicPlaying = false;
     }
-    public Car(String model) {
+    public Car(String model) throws RuntimeException{
         this();
         this.model = model;
     }
